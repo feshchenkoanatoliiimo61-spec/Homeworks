@@ -6,7 +6,7 @@ const generateKey = (length, characters) =>{
     let characterLength = characters.length;
     for(let i = 0; i <= length; i++){
         let character = Math.random() * characterLength;
-        readyWord += characters.charAt(character);//chartAr бере символ за індексом character із characters
+        readyWord += characters.charAt(character);
     }
     return readyWord;
 }
