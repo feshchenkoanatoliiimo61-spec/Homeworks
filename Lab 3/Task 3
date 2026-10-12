@@ -1,0 +1,18 @@
+'use strict';
+
+
+const IP = (adresIP) =>{
+    const array = adresIP.split('.').map(Number);
+
+    array.forEach((item, i, arr) => {
+        arr[i] = item << 8 * (3 - i);
+    });
+    let sum = (acc, crr, i = 0) => (i ++, acc + crr);
+    let sumIP = array.reduce(sum);
+
+    return sumIP;
+}
+console.log(IP('111.111.111.111'));
+console.log(IP('123.453.0.0'));
+console.log(IP('199.100.316.0'));
+console.log(IP('192.203.0.635'));

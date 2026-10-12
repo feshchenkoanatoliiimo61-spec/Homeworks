@@ -1,0 +1,12 @@
+'use strict';
+
+const random =(min = 0, max = 0) =>{
+    if(max === 0){
+        max = min;
+        min = 0;
+    }
+    return Math.floor(Math.random() * (max - min + 1)) + min;   
+}
+console.log(random(0, 8));
+console.log(random(6));
+console.log(random(3, 10));

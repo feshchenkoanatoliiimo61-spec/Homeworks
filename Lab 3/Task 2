@@ -1,0 +1,14 @@
+'use strict';
+
+const characters = '950tj85mv954m5m84u595gjfndgjj5u8vnym698mtorgjfgj85m9g4wjrecgj459u';
+let readyWord = '';
+const generateKey = (length, characters) =>{
+    let characterLength = characters.length;
+    for(let i = 0; i <= length; i++){
+        let character = Math.random() * characterLength;
+        readyWord += characters.charAt(character);//chartAr бере символ за індексом character із characters
+    }
+    return readyWord;
+}
+
+console.log(generateKey(30, characters));

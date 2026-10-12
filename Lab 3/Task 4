@@ -1,0 +1,35 @@
+'use strict';
+
+let arr = (object) => {
+    const result = []; 
+    const keys = Object.keys(object); 
+
+    for (let i = 0; i < keys.length; i++) {
+        const keyI = keys[i]; 
+        const type = object[keyI]; 
+
+        if (typeof type === 'function') {
+            const objectLength = type.length; 
+            result.push([keyI, objectLength]);
+        }
+    }
+    return result;
+}
+
+const iface = {
+    if1: (x) => [x],
+    if2: (y, z) => [y, z],
+    if3: (x, y, z) => [x, y, z]
+};
+console.dir(arr(iface));
+
+console.dir(arr({
+  m1: x => [x],
+  m2: function (x, y) {
+    return [x, y];
+  },
+  m3(x, y, z) {
+    return [x, y, z];
+  }
+}));
+
