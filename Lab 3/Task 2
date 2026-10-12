@@ -12,3 +12,5 @@ const generateKey = (length, characters) =>{
 }
 
 console.log(generateKey(30, characters));
+console.log(generateKey(15, characters));
+console.log(generateKey(22, characters));
